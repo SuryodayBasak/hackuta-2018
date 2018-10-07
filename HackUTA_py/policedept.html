@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	background-color: #0101ee;
+	color: #efefef;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+</style>
+<script type="text/javascript" src="policedpt.json"></script>
+<script type="text/JavaScript">
+         <!--
+            function AutoRefresh( t ) {
+               setTimeout("location.reload(true);", t);
+            }
+         //-->
+</script>
+<h1 id="demo" align="center">List of Emergencies - Police Dept.</h1>
+</head>
+
+
+<body onload="JavaScript:AutoRefresh(5000);">
+<script>
+var mydata = JSON.parse(data);
+for(var i = mydata.length-1; i >= 0; i--) {
+	document.write('<h2>' + mydata[i].category + '</h2>');
+	document.write("<b>City</b>: " + mydata[i].city + '&emsp;&emsp;');
+	document.write("<b>State</b>: " + mydata[i].state + '&emsp;&emsp;');
+	document.write("<b>Date</b>: " + mydata[i].date + '&emsp;&emsp;')
+	document.write("<b>Time</b>: " + mydata[i].time + '&emsp;&emsp;');
+	document.write('<br/>');
+	document.write('<hr/>');
+}
+
+</script>
+
+</body>
+</html> 
